@@ -89,7 +89,7 @@ viewer.renderer.displayCanvasScaling = Math.min(window.devicePixelRatio, 1);
         t2.to(modelPosition, {
             x : 0,
             y : -0.8,
-            z : -1.2,
+            z : -0.2,
             scrollTrigger : {
                 trigger : '.first',
                 start : 'top bottom',
