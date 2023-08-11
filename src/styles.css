@@ -130,6 +130,17 @@ section p{
 }
 
 @media (max-width: 800px) {
+  .third div{
+    width: 80%;
+    margin-top: 10%;
+    margin-bottom: auto;
+  }
+  .fourth div{
+    width: 80%;
+    margin-bottom: auto;
+    margin-top: 10%;
+    margin-left: 10%;
+  }
   section span{
     font-size: 20px;
   }
@@ -137,7 +148,7 @@ section p{
     width: 80%;
   }
   section p{
-    font-size: 12px;
+    font-size: 15px;
     word-spacing: 2px;
     margin-bottom: 20px;
   }
