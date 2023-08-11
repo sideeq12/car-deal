@@ -31,13 +31,16 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 10;
-  color: white;
-  background-color: black;
+  color: red;
+  /* background-color: black; */
+  background-color: wheat;
   font-size: 12px;
   gap: 2rem;
+  /* display: none; */
 }
 
 .progress{
+  transform: scaleX(0);
   position: absolute;
   top: 60%;
   width: 50%;
@@ -45,8 +48,22 @@ body {
   background-color: red;
   margin: 0 5%;
   transform-origin: left;
-  /* transform: scale(0); */
   transition: transform 1s;
+}
+
+main{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  scroll-snap-points-y: repeat(100vh);
+}
+
+section{
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: center;
+  font-size: 42px;
 }
 
 #webgi-canvas {
@@ -59,5 +76,5 @@ body {
   position: fixed;
   top: 0;
   z-index: -1;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
