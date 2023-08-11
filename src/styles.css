@@ -34,11 +34,9 @@ body {
   align-items: center;
   z-index: 10;
   color: red;
-  /* background-color: black; */
   background-color: wheat;
   font-size: 12px;
   gap: 2rem;
-  /* display: none; */
 }
 
 .progress{
@@ -129,4 +127,18 @@ section p{
   top: 0;
   z-index: -1;
   /* pointer-events: none; */
+}
+
+@media (max-width: 800px) {
+  section span{
+    font-size: 20px;
+  }
+  section div{
+    width: 80%;
+  }
+  section p{
+    font-size: 12px;
+    word-spacing: 2px;
+    margin-bottom: 20px;
+  }
 }
