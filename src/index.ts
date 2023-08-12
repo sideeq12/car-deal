@@ -85,6 +85,7 @@ viewer.renderer.displayCanvasScaling = Math.min(window.devicePixelRatio, 1);
     function setupScrollAnimation(){
         // document.body.removeChild(loaderElement)
 
+    if(window.innerWidth > 900){
         const t2 = gsap.timeline()
         t2.to(modelPosition, {
             x : 0,
@@ -293,6 +294,228 @@ viewer.renderer.displayCanvasScaling = Math.min(window.devicePixelRatio, 1);
                 },
                 onUpdate
             })
+    }else{
+        const t2 = gsap.timeline()
+        t2.to(modelPosition, {
+            x : 0,
+            y : -0.8,
+            z : -0.2,
+            scrollTrigger : {
+                trigger : '.first',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        }).to(modelRotation, {
+            x : 0.2,
+            y : 0.4,
+            z : -0.2,
+            scrollTrigger : {
+                trigger : '.first',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        }).to(modelSize, {
+            x: 0.8,
+            y : 0.5,
+            z : 0.5,
+            scrollTrigger : {
+                trigger : '.first',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        })
+        // second
+         .to(modelRotation, {
+            x : 0,
+            y : 0,
+            z : -1.570,
+            scrollTrigger : {
+                trigger : '.second',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        }).to(modelSize, {
+            x: 0.4,
+            y : 0.4,
+            z : 0.4,
+            scrollTrigger : {
+                trigger : '.second',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        }).to(modelPosition, {
+            x : 0,
+            y : -0.5,
+            z : 0,
+            scrollTrigger : {
+                trigger : '.first',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        })
+
+        // three
+        .to(modelRotation, {
+            x : 0,
+            y : 2,
+            z : 0,
+            scrollTrigger : {
+                trigger : '.third',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        }).to(modelPosition, {
+            x : 1,
+            y : -0.7,
+            z : 0.1,
+            scrollTrigger : {
+                trigger : '.third',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        })
+
+           // fourth
+           .to(modelRotation, {
+            x : 0,
+            y : -0.2,
+            z : 0,
+            scrollTrigger : {
+                trigger : '.fourth',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        }).to(modelPosition, {
+            x : 2,
+            y : -0.5,
+            z : -1.5,
+            scrollTrigger : {
+                trigger : '.fourth',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        }).to(modelSize, {
+            x: 2.25,
+            y : 0.9,
+            z : 0.9,
+            scrollTrigger : {
+                trigger : '.fourth',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        })
+
+        // fifth
+        t2.to(modelPosition, {
+            x : 0,
+            y : -0.8,
+            z : -1.2,
+            scrollTrigger : {
+                trigger : '.fifth',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        }).to(modelRotation, {
+            x : 0.2,
+            y : 0.4,
+            z : -0.2,
+            scrollTrigger : {
+                trigger : '.fifth',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        }).to(modelSize, {
+            x: 1.5,
+            y : 1,
+            z : 1,
+            scrollTrigger : {
+                trigger : '.fifth',
+                start : 'top bottom',
+                end : 'top top',
+                scrub : 0.2,
+                immediateRender : false
+            },
+            onUpdate
+        })
+
+            // fourth
+            .to(modelRotation, {
+                x : 0,
+                y : -1.7,
+                z : 0,
+                scrollTrigger : {
+                    trigger : '.sixth',
+                    start : 'top bottom',
+                    end : 'top top',
+                    scrub : 0.2,
+                    immediateRender : false
+                },
+                onUpdate
+            }).to(modelPosition, {
+                x : 1,
+                y : -0.4,
+                z : 0.1,
+                scrollTrigger : {
+                    trigger : '.sixth',
+                    start : 'top bottom',
+                    end : 'top top',
+                    scrub : 0.2,
+                    immediateRender : false
+                },
+                onUpdate
+            }).to(modelSize, {
+                x: 0.6,
+                y : 0.6,
+                z : 0.6,
+                scrollTrigger : {
+                    trigger : '.sixth',
+                    start : 'top bottom',
+                    end : 'top top',
+                    scrub : 0.2,
+                    immediateRender : false
+                },
+                onUpdate
+            })
+    }
     }
 
     function onUpdate(){

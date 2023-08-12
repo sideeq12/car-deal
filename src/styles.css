@@ -130,9 +130,14 @@ section p{
 }
 
 @media (max-width: 800px) {
+  .first div{
+    margin-top: 30%;
+    margin-bottom: auto;
+  }
   .third div{
     width: 80%;
-    margin-top: 10%;
+    margin-top: 40%;
+    margin-right: 10%;
     margin-bottom: auto;
   }
   .fourth div{
@@ -156,5 +161,9 @@ section p{
     font-size: 15px;
     word-spacing: 2px;
     margin-bottom: 20px;
+  }
+  .second div{
+    margin-bottom: auto;
+    margin-top: 30%;
   }
 }
