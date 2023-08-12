@@ -195,7 +195,9 @@ section p{
     justify-content: center;
     display: block;
     z-index: 40;
+    padding-top: 10%;
     width: 100vw;
+    top: 0;
     height: 100vh;
     display: none;
 
@@ -216,6 +218,7 @@ section p{
 
   .first nav.resp span.icon{
     margin-right: 10%;
+    margin-top: 20px;
   }
 
  
