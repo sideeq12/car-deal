@@ -6,15 +6,18 @@ import {
 } from "webgi";
 import "./styles.css";
 
+// importing gsap and tweakpane and tweakpane
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {Pane} from 'tweakpane'
+// import {Pane} from 'tweakpane'
 gsap.registerPlugin(ScrollTrigger)
 
+// target the main container where everything scrolls to animate 'mainContainer'
 ScrollTrigger.defaults({
     scroller : '.mainContainer'
 })
 
+//main function for a display processing, viewer, changing position, rotation etc
 async function setupViewer(){
     const viewer = new ViewerApp({
         canvas: document.getElementById('webgi-canvas') as HTMLCanvasElement,
@@ -22,20 +25,7 @@ async function setupViewer(){
         isAntialiased : true,
     })
 
-const data = {
-    position : {
-        x : 0,
-        y : 0,
-        z : 0
-    },
-    rotation : {
-        x : 0,
-        y : 0,
-        z : 0
-    },
-}
-
-const pane = new Pane(); 
+// dispaly scaling for our model
 viewer.renderer.displayCanvasScaling = Math.min(window.devicePixelRatio, 1);
 
 
@@ -43,11 +33,11 @@ viewer.renderer.displayCanvasScaling = Math.min(window.devicePixelRatio, 1);
     const manager = await viewer.addPlugin(AssetManagerPlugin)
     await addBasePlugins(viewer)
 
+    // using importer to read our model import progress
     const importer  = manager.importer;
     importer?.addEventListener("onProgress", (ev)=>{
             const progress = ev.loaded/ev.total
-
-            document.querySelector(".progress")?.setAttribute("style",`transform : scaleX(${progress})` )
+            document.querySelector(".progress")?.setAttribute("style",`transform : scaleX(${progress})`)
     })
 
     importer?.addEventListener("onLoad", ()=>{ 
@@ -80,10 +70,8 @@ viewer.renderer.displayCanvasScaling = Math.min(window.devicePixelRatio, 1);
      } )
     }
 
-    
-
     function setupScrollAnimation(){
-        // document.body.removeChild(loaderElement)
+        document.body.removeChild(loaderElement)
 
     if(window.innerWidth > 900){
         const t2 = gsap.timeline()
@@ -517,6 +505,16 @@ viewer.renderer.displayCanvasScaling = Math.min(window.devicePixelRatio, 1);
             })
     }
     }
+    const open = document.querySelector('.icon') as HTMLSpanElement
+    open.addEventListener('click', ()=>{
+        document.querySelector(".cover")?.setAttribute("style",`display : block`)
+   
+    })
+    const close = document.querySelector('.close') as HTMLSpanElement
+    close.addEventListener('click', ()=>{
+        document.querySelector(".cover")?.setAttribute("style",`display : none`)
+   
+    })
 
     function onUpdate(){
      viewer.setDirty()

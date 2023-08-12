@@ -77,17 +77,50 @@ section{
   width: 100vw;
   scroll-snap-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 30px;
 }
 section div{
   width: 50%;
 }
 .first div, .fifth div{
   margin-left: 10%;
-  margin-top: 8%;
+  margin-top: 6%;
   margin-bottom: auto;
   margin-right: auto;
+}
+.first nav.menu {
+  position: fixed;
+  height: 60px;
+  display: flex;
+  top: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(219, 218, 218, 0.089);
+}
+.first nav.resp {
+  display: none;
+}
+.first nav label{
+  margin-left: 10%;
+  color: var(--tertiary);
+}
+.first nav ul{
+  display: flex;
+  gap: 3rem;
+  margin-right: 10%;
+}
+.first nav ul li{
+  list-style: none;
+}
+.first nav ul li a{
+  background: none;
+}
+.first nav.resp span.icon:hover{
+  cursor: pointer;
 }
 a{
   text-decoration: none;
@@ -123,7 +156,9 @@ section p{
   margin-left: auto;
   margin-right: 10%;
 }
-
+.first nav.cover{
+  display: none;
+}
 
 #webgi-canvas {
   width: 100%;
@@ -139,6 +174,51 @@ section p{
 }
 
 @media (max-width: 800px) {
+  .first nav.menu {
+    display: none;
+  }
+  .first nav.resp {
+    display: flex;
+    position: fixed;
+    top: 0;
+    margin-top: 20px;
+    background: rgba(219, 218, 218, 0.089);
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .first nav.cover{
+    position: fixed;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    z-index: 40;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+
+  }
+  .first nav.cover ul {
+    margin-top: 20vh;
+    align-items: center;
+    flex-direction: column;
+    font-size: large;
+  }
+  .first nav.cover .close{
+    float: right;
+    margin-right: 10%;
+  }
+  .first nav.cover .close:hover{
+    cursor: pointer;
+  }
+
+  .first nav.resp span.icon{
+    margin-right: 10%;
+  }
+
+ 
   .first div{
     margin-top: 30%;
     margin-bottom: auto;
